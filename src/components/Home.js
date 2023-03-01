@@ -1,16 +1,16 @@
 import React, { useState } from 'react'
 import Cards from './Cards'
 import Carousel from "react-elastic-carousel";
-
+import {data} from '../constants/data'
 const Home = () => {
   const breakPoints = [
     { width: 1, itemsToShow: 1 },
     { width: 550, itemsToShow: 2, itemsToScroll: 2 },
-    { width: 768, itemsToShow: 3 },
-    { width: 1200, itemsToShow: 4 }
+    { width: 768, itemsToShow: 4 },
+    { width: 1200, itemsToShow: 5 }
   ];
 
-  const [items, setItems] = useState([1, 2, 3, 4, 5, 6, 7, 8]);
+  const [items, setItems] = useState(data);
 
 
   return (
@@ -19,7 +19,7 @@ const Home = () => {
       <div className="carousel-wrapper mb-10 max-w-7xl mx-auto">
         <Carousel breakPoints={breakPoints} showEmptySlots={true}>
           {items.map((item) => (
-            <div className='mx-5'> <Cards /> </div>
+            <div key={item.MatchNumber} className='mx-2'> <Cards  data={item}/> </div>
           ))}
         </Carousel>
       </div>
