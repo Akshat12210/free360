@@ -3,7 +3,7 @@ import React from 'react'
 const Cards = () => {
     return (
         <div class="max-w-sm mt-5 mx-auto rounded bg-white overflow-hidden shadow-lg">
-            <img class="w-full" src="/img/card-top.jpg" alt="Sunset in the mountains" />
+            {/* <img class="w-full" src="/img/card-top.jpg" alt="Sunset in the mountains" /> */}
                 <div class="px-6 py-4">
                     <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
                     <p class="text-gray-700 text-base">

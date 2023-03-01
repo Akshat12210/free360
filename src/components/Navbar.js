@@ -1,8 +1,8 @@
 import { Fragment, useState, useEffect } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
-import { useLocation } from 'react-router-dom'
-
+import { useLocation, Link } from 'react-router-dom'
+import vrsvg from '../assets/vr-technology.svg'
 const navigation = [
   { name: 'Home', href: '/', current: true },
   { name: 'Live', href: '/live', current: false },
@@ -23,7 +23,7 @@ export default function Navbar() {
     const page = pathname.charAt(1).toUpperCase() + pathname.substring(2) || 'Home';
     setActive(page);
   }, [location]);
-  
+
   return (
     <Disclosure as="nav" className="bg-gray-800">
       {({ open }) => (
@@ -45,26 +45,26 @@ export default function Navbar() {
                 <div className="flex flex-shrink-0 items-center">
                   <img
                     className="block h-8 w-auto lg:hidden"
-                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+                    src={vrsvg}
                     alt="Your Company"
                   />
                   <img
                     className="hidden h-8 w-auto lg:block"
-                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+                    src={vrsvg}
                     alt="Your Company"
                   />
                 </div>
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
                     {navigation.map((item) => (
-                      <a
+                      <Link
                         key={item.name}
-                        href={item.href}
-                        className={active === item.name ? 'rounded-md px-3 py-2 text-sm font-medium bg-gray-900 text-white' : 'rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white' }
+                        to={item.href}
+                        className={active === item.name ? 'rounded-md px-3 py-2 text-sm font-medium bg-gray-900 text-white' : 'rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white'}
                         aria-current={item.current ? 'page' : undefined}
                       >
                         {item.name}
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 </div>
