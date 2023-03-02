@@ -5,7 +5,7 @@ import { useLocation, Link } from 'react-router-dom'
 import vrsvg from '../assets/vr-technology.svg'
 const navigation = [
   { name: 'Home', href: '/', current: true },
-  { name: 'Live', href: '/live', current: false },
+  // { name: 'Live', href: '/live', current: false },
   { name: 'Highlight', href: '/highlight', current: false },
   { name: 'Fixtures', href: '/fixtures', current: false },
 ]
@@ -66,7 +66,17 @@ export default function Navbar() {
                         {item.name}
                       </Link>
                     ))}
+                    <Link
+                        key="2"
+                        to="/live"
+                        className={'text-white bg-red-600 text-bold rounded-md px-3 py-2 text-sm font-medium '}
+                        aria-current={true ? 'page' : undefined}
+                      >
+                        Watch Live
+                      </Link>
+                    
                   </div>
+
                 </div>
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
@@ -85,7 +95,7 @@ export default function Navbar() {
                       <span className="sr-only">Open user menu</span>
                       <img
                         className="h-8 w-8 rounded-full"
-                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                        src="https://e7.pngegg.com/pngimages/84/165/png-clipart-united-states-avatar-organization-information-user-avatar-service-computer-wallpaper-thumbnail.png"
                         alt=""
                       />
                     </Menu.Button>

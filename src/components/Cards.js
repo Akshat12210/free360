@@ -2,7 +2,7 @@ import React from 'react'
 
 const Cards = (props) => {
     const data = props.data;
-    console.log(data)
+    // console.log(data)
     return (
         <div className="max-w-sm h-40 mt-5 mx-auto rounded bg-white overflow-hidden shadow-lg">
             {/* <img className="w-full" src="/img/card-top.jpg" alt="Sunset in the mountains" /> */}
